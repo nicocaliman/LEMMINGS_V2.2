@@ -1,42 +1,4 @@
-<!-- TOC start -->
-- [Assignment 2 - Part II: Lemmings Extended](#práctica-2-parte-ii-lemmings-extended)
-- [New command and new role: SetRoleCommand and Parachuter](#command-setRoleCommand_parachuter)
-	- [Interface implemented by the roles: `LemmingRole`](#interfaz-lemmingRole)
-	- [New role class: `ParachuterRole`](#parachuter)
-	- [Role factory](#factoria-de-roles)
-	- [New command class: `SetRoleCommand`](#command-setRoleCommand)
-- [New role and new object: DownCaverRole and MetalWall](#downCaver-metalWall)
-	- [Generalizing the **interactions** between game objects](#interfaces-de-gameobject)
-	- [Details of `DownCaverRole` and `MetalWall`](#detalles-downCaver-metalWall)
-	- [Applying *double-dispatch* to the ExitDoor](#dd-exitDoor)
-	- [Extending the reset command (optional)](#reset-num)
-<!-- TOC end -->
-<!-- TOC --><a name="práctica-2-parte-ii-lemmings-extended"></a>
-# Assignment 2 - Parte II: Lemmings Extended
-
-**Submission: November 18th, 12:00**
-
-**Objectives:** Inheritance, polymorphism, abstract classes and interfaces.
-
-<!--
-**Preguntas Frecuentes**: Como es habitual que tengáis dudas (es normal) las iremos recopilando en este [documento de preguntas frecuentes](../faq.md). Para saber los últimos cambios que se han introducido [puedes consultar la historia del documento](https://github.com/informaticaucm-TPI/2425-Lemmings/commits/main/enunciados/faq.md).
--->
-
-In this assignment, we will extend the code with new functionality. The principle objective is to enable the lemmings to have
-different possible behaviours and interactions with their environment, encapsulated in the concept of roles, But first a **warning**:
-
-**IMPORTANT**: Any of the following, on its own, is sufficient reason to fail:
-
-- breaking encapsulation,
-- the use of methods that return lists,
-- the use of `instanceof` or `getClass`, since identifying the dynamic types of objects is simply a way of avoiding the use of
-  polymorphism and dynamic binding, i.e. of avoiding the use of OOP.
-- the use of a *DIY instanceof* (e.g. each subclass of `GameObject` has a set of methods `isX`, one for each concrete subclass of
-  `GameObject`, where the method `isX` returns `true` in the concrete `GameObject` subclass `X` and `false` in any other concrete
-   `GameObject` subclass); such a solution is even worse than using `instanceof` or `getClass` since it is simply a clumsier, more
-   verbose, way of doing the same thing.
-
-<!-- TOC --><a name="command-setRoleCommand_parachuter"></a>
+#LEMMINGS_V2.2
 ## New command and new role: `SetRoleCommand` and `Parachuter`
 
 In this section we create a new command that enables the role of a lemming to be changed. However, in order to be
